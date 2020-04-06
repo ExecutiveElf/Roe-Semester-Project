@@ -13,6 +13,12 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Source Files\Monster cpps">
+      <UniqueIdentifier>{9db0d079-c760-4a8d-bfb6-12e673037203}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Monster hs">
+      <UniqueIdentifier>{118e23f2-e2dd-47fb-a87a-ea995e04fcb5}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="monsters.h">
@@ -23,6 +29,15 @@
     </ClInclude>
     <ClInclude Include="skills.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="skeleton.h">
+      <Filter>Header Files\Monster hs</Filter>
+    </ClInclude>
+    <ClInclude Include="slime.h">
+      <Filter>Header Files\Monster hs</Filter>
+    </ClInclude>
+    <ClInclude Include="bat.h">
+      <Filter>Header Files\Monster hs</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -37,6 +52,15 @@
     </ClCompile>
     <ClCompile Include="skills.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="slime.cpp">
+      <Filter>Source Files\Monster cpps</Filter>
+    </ClCompile>
+    <ClCompile Include="skeleton.cpp">
+      <Filter>Source Files\Monster cpps</Filter>
+    </ClCompile>
+    <ClCompile Include="bat.cpp">
+      <Filter>Source Files\Monster cpps</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

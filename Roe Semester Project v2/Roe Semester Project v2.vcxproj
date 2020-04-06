@@ -123,14 +123,20 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="bat.h" />
     <ClInclude Include="monsters.h" />
     <ClInclude Include="player.h" />
+    <ClInclude Include="skeleton.h" />
     <ClInclude Include="skills.h" />
+    <ClInclude Include="slime.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="bat.cpp" />
     <ClCompile Include="monsters.cpp" />
     <ClCompile Include="player.cpp" />
+    <ClCompile Include="skeleton.cpp" />
     <ClCompile Include="skills.cpp" />
+    <ClCompile Include="slime.cpp" />
     <ClCompile Include="Source.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -1,12 +1,17 @@
 #include "player.h"
 
-void playerstats(player you[1])
+player::player()
 {
-	you[0].maxhealth = 10;
-	you[0].health = 10;
-	you[0].mana = 5;
-	you[0].defense = 0;
-	you[0].damage = 2;
-	you[0].level = 1;
-	you[0].exp = 0;
+	maxhealth = 10;
+	health = 10;
+	maxmana = 5;
+	mana = 5;
+	defense = 0;
+	damage = 2;
+	level = 1;
+	exp = 0;
+}
+
+player::~player()
+{
 }

@@ -1,90 +1,142 @@
-#include "monsters.h"
+#include <time.h>
+#include <iomanip>
+#include <vector>
+#include <stdlib.h>
 #include "player.h"
 #include "skills.h"
-#include <iomanip>
-#include <time.h>
+#include "slime.h"
+#include "bat.h"
+#include "skeleton.h"
+#include "monsters.h"
 
-void monsterstats(monster mon[100]);
+using namespace std;
+
+void battle(player player);
+skill skills[20];
 void skillstats(skill skills[20]);
-void playerstats(player you[1]);
 
 int main()
 {
-	monster mon[100];
-	skill skills[20];
-	player you[1];
-	monsterstats(mon);
+	player player;
+	battle(player);
+	return 0;
+}
+
+void battle(player player)
+{
+	bool run = false;
 	skillstats(skills);
-	playerstats(you);
-
-
 	srand((unsigned int)time(NULL));
-	int i = rand() % 100 + 1; //Selects random monster.
-	if (i <= 45)
-		i = 0;
-	else if (i <= 80)
-		i = 1;
-	else
-		i = 2;
+	int i = rand() % 3; //Selects random monster.
 
+	vector<monster> mons;
 
-	int cursor;
-	//Beginning of Combat
-	mon[i].health = mon[i].maxhealth;
-	cout << "An enemy " << mon[i].name << " has appeared!" << endl;
+	slime* tempSlime;
+	bat* tempBat;
+	skeleton* tempSkeleton;
+
+tempSlime = new slime;
+mons.push_back(*tempSlime);
+
+tempBat = new bat;
+mons.push_back(*tempBat);
+
+tempSkeleton = new skeleton;
+mons.push_back(*tempSkeleton);
+
+	cout << "An enemy " << mons[i].GetName() << " has appeared!\n_______________________________________\n";
 	do {
-		cout << "______________________________________________" << endl;
-		cout << "Player" << setw(9) << "HP: " << you[0].health << "    MP: " << you[0].mana;
-		if (you[0].health < 10)
-			cout << " ";
-		if (you[0].mana < 10)
-			cout << " ";
-		cout << "   Lvl: " << you[0].level << endl;
-		cout << mon[i].name << setw(15 - mon[i].namelength) << "HP: " << mon[i].health;
-		if (mon[i].health < 10)
-			cout << " ";
-		cout << "    MP: " << mon[i].mana << endl;
-		cout << "______________________________________________" << endl;
-		cout << "1. Fight      2. Items\n3. Summary    4. Flee\n";
-		cout << "______________________________________________" << endl;
-		cin >> cursor;
-		cout << "______________________________________________" << endl;
 
-		if (cursor == 1)
+
+		cout << "Player " << setw(8) << "HP: ";
+		if (player.GetHealth() < 10)
+			cout << " ";
+		cout << player.GetHealth() << " / " << player.GetMaxhealth();
+		cout << setw(10) << "MP: ";
+		if (player.GetMana() < 10)
+			cout << " ";
+		cout << player.GetMana() << " / ";
+		if (player.GetMaxmana() < 10)
+			cout << " ";
+		cout << player.GetMaxmana() << endl;
+
+
+		cout << mons[i].GetName() << setw(15 - mons[i].GetNamelength()) << "HP: ";
+		if (mons[i].GetHealth() < 10)
+			cout << " ";
+		cout << mons[i].GetHealth() << " / ";
+		if (mons[i].GetMaxhealth() < 10)
+			cout << " ";
+		cout << mons[i].GetMaxhealth() << setw(10) << "MP: ";
+		if (mons[i].GetMana() < 10)
+			cout << " ";
+			cout << mons[i].GetMana() << " / ";
+		if (mons[i].GetMaxmana() < 10)
+			cout << " ";
+		cout << mons[i].GetMaxmana() << endl;
+
+
+		cout << "_______________________________________\n1. Fight     2. Items\n3. Check     4. Run\n_______________________________________\n";
+		int input;
+		cin >> input;
+		cout << "_______________________________________\n";
+		int damage;
+		switch (input)
 		{
-
+		case 1:
 			for (int j = 0; j < 20; j++)
 			{
 				if (skills[j].available == true)
 				{
-					cout << j + 1 << ". " << skills[j].manacost << " MP    " << skills[j].name << endl;
+					cout << j + 1 << ". ";
+					if (skills[j].manacost < 10 && skills[j].manacost >= 0)
+						cout << " ";
+					cout << skills[j].manacost << " MP    " << skills[j].name << endl;
 				}
 			}
 			cout << "______________________________________________" << endl;
 			do {
-				cin >> cursor;
-				if (you[0].mana < skills[cursor - 1].manacost)
+				cin >> input;
+				if (player.GetMana() < skills[input - 1].manacost)
 					cout << "Not enough mana!\n";
-			} while (you[0].mana < skills[cursor - 1].manacost);
-			cout << "______________________________________________" << endl;
-			cout << "You hit the enemy " << mon[i].name << " for ";
-			cout << ((you[0].damage + skills[cursor - 1].power) * skills[cursor - 1].multiplier) << " damage!\n";
-			mon[i].health = mon[i].health - ((you[0].damage + skills[cursor - 1].power) * skills[cursor - 1].multiplier);
-			you[0].mana = you[0].mana - skills[cursor - 1].manacost;
-			if (mon[i].health > 0)
-			{
-				cout << "Enemy " << mon[i].name << " attacks you for " << mon[i].damage << " damage!\n";
-				you[0].health = you[0].health - mon[i].damage;
-			}
+			} while (player.GetMana() < skills[input - 1].manacost);
+
+			damage = (player.GetDamage() * skills[input - 1].multiplier) + skills[input - 1].power - mons[i].GetDefense();
+			player.SetMana(player.GetMana() - skills[input - 1].manacost);
+			if (player.GetMana() > player.GetMaxmana())
+				player.SetMana(player.GetMaxmana());
+			system("CLS");
+			if (skills[input - 1].multiplier != 0)
+				cout << "You attacked the enemy " << mons[i].GetName() << " for " << damage << " damage.";
+			if (skills[input - 1].manacost < 0)
+				cout << "You restored " << skills[input - 1].manacost * -1 << " mana.";
+			mons[i].SetHealth(mons[i].GetHealth() - damage);
+			break;
+		case 2:
+			system("CLS");
+			cout << "This feature is not yet implemented.";
+			break;
+		case 3:
+			system("CLS");
+			cout << mons[i].GetName() << "s have " << mons[i].GetMaxhealth() << " health, " << mons[i].GetMaxmana() << " mana, and " << mons[i].GetDefense() << " defense.";
+			break;
+		case 4:
+			system("CLS");
+			run = true;
 		}
-	} while (mon[i].health > 0 && you[0].health > 0);
-	if (you[0].health <= 0)
-		cout << "Game Over\n";
-	if (mon[i].health <= 0)
-	{
-		cout << "You defeated the enemy " << mon[i].name << " and gained ";
-		cout << 15 * (mon[i].level - (you[0].level - 1)) << " experience points!\n";
-	}
-	//End of Combat
-	return 0;
+		if (mons[i].GetHealth() > 0 && run != true)
+		{
+			damage = mons[i].GetDamage() - player.GetDefense();
+			player.SetHealth(player.GetHealth() - damage);
+			cout << "\nEnemy " << mons[i].GetName() << " attacked you for " << damage << " damage.";
+		}
+		cout << "\n_______________________________________\n";
+	} while (player.GetHealth() > 0 && mons[i].GetHealth() > 0 && run != true);
+	if (player.GetHealth() <= 0)
+		cout << "Game Over";
+	if (mons[i].GetHealth() <= 0)
+		cout << "You defeted the " << mons[i].GetName() << "!\nYou gained " << (mons[i].GetLevel() + 1 - player.GetLevel()) * 15 << " EXP.";
+	if (run == true)
+		cout << "You ran away!";
+	cout << "\n_______________________________________\n";
 }

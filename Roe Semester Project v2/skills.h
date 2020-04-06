@@ -17,6 +17,7 @@ struct skill
 struct abilities
 {
 	skill attack;
+	skill focus;
 	skill firebolt;
 	skill heal;
 };
