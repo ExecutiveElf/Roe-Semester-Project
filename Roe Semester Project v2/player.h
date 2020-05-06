@@ -10,9 +10,6 @@ public:
 	player();
 	~player();
 
-	void SetName(string name_) { name = name_; };
-	string GetName() { return name; };
-
 	void SetMaxhealth(int maxhealth_) { maxhealth = maxhealth_; };
 	int GetMaxhealth() { return maxhealth; };
 
@@ -36,16 +33,29 @@ public:
 
 	void SetExp(int exp_) { exp = exp_; };
 	int GetExp() { return exp; };
+
+	void SetGold(int gold_) { gold = gold_; };
+	int GetGold() { return gold; };
+
+	void SetWeapon(int weapon_) { weapon = weapon_; };
+	int GetWeapon() { return weapon; };
+
+	void SetArmor(int armor_) { armor = armor_; };
+	int GetArmor() { return armor; };
+
 private:
-	string name;
-	int namelength;
 	int maxhealth;
 	int health;
 	int maxmana;
 	int mana;
+
 	int defense;
 	int damage;
 	int level;
 	int exp;
+	int gold;
+
+	int weapon;
+	int armor;
 };
 #endif

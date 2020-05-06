@@ -13,54 +13,198 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Source Files\Monster cpps">
+    <Filter Include="Header Files\Debuggers">
+      <UniqueIdentifier>{493764d7-afa7-4819-a49b-a30d943f3fd9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Debuggers">
+      <UniqueIdentifier>{f00dccbe-40ee-4e30-b870-39d876ceb857}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Monsters">
       <UniqueIdentifier>{9db0d079-c760-4a8d-bfb6-12e673037203}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\Monster hs">
+    <Filter Include="Source Files\Items">
+      <UniqueIdentifier>{80f573f7-e7da-4771-9d8d-a63b404bd895}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Items">
+      <UniqueIdentifier>{7d0f4b35-0d1b-4813-aae1-481446b1886d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Monsters">
       <UniqueIdentifier>{118e23f2-e2dd-47fb-a87a-ea995e04fcb5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Monsters\World 1">
+      <UniqueIdentifier>{7eb08145-5c9f-4792-89e4-c605ad779661}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Items\Weapons">
+      <UniqueIdentifier>{a8943060-1d1d-4674-acd4-fc5d9ef7d3c4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Items\Armors">
+      <UniqueIdentifier>{5d4771bb-d528-4b10-8bf5-e4610bcf362e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Items\Weapons">
+      <UniqueIdentifier>{3834d064-3f68-4eec-b6e2-41e58944b625}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Items\Armors">
+      <UniqueIdentifier>{845ff105-aa82-467b-8b81-2617b026c968}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Core">
+      <UniqueIdentifier>{1ecd71da-a191-434e-8fca-2212717a8872}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Core">
+      <UniqueIdentifier>{53dce6ee-e330-49eb-a22f-3da64ec26ff3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Monsters\World 1">
+      <UniqueIdentifier>{be4f3ec5-d65b-4230-93f6-b15d201e0705}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Monsters\World 2">
+      <UniqueIdentifier>{d71b9b76-aab7-44f1-a5a6-334c338b4d89}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Monsters\World 2">
+      <UniqueIdentifier>{a7e6e9a8-141c-45cc-9fbf-4c5ea97b9730}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Items\Potions">
+      <UniqueIdentifier>{8cb0f97d-bcf2-466c-9a89-af920c66842a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Items\Potions">
+      <UniqueIdentifier>{ae1d6ef5-c222-45c1-b7a0-437ecf3d4301}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="items.h">
+      <Filter>Header Files\Debuggers</Filter>
+    </ClInclude>
     <ClInclude Include="monsters.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Debuggers</Filter>
     </ClInclude>
-    <ClInclude Include="player.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="weapons.h">
+      <Filter>Header Files\Debuggers</Filter>
     </ClInclude>
-    <ClInclude Include="skills.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="armors.h">
+      <Filter>Header Files\Debuggers</Filter>
     </ClInclude>
-    <ClInclude Include="skeleton.h">
-      <Filter>Header Files\Monster hs</Filter>
-    </ClInclude>
-    <ClInclude Include="slime.h">
-      <Filter>Header Files\Monster hs</Filter>
+    <ClInclude Include="potions.h">
+      <Filter>Header Files\Debuggers</Filter>
     </ClInclude>
     <ClInclude Include="bat.h">
-      <Filter>Header Files\Monster hs</Filter>
+      <Filter>Header Files\Monsters\World 1</Filter>
+    </ClInclude>
+    <ClInclude Include="cadet.h">
+      <Filter>Header Files\Monsters\World 1</Filter>
+    </ClInclude>
+    <ClInclude Include="goldslime.h">
+      <Filter>Header Files\Monsters\World 1</Filter>
+    </ClInclude>
+    <ClInclude Include="skeleton.h">
+      <Filter>Header Files\Monsters\World 1</Filter>
+    </ClInclude>
+    <ClInclude Include="slime.h">
+      <Filter>Header Files\Monsters\World 1</Filter>
+    </ClInclude>
+    <ClInclude Include="club.h">
+      <Filter>Header Files\Items\Weapons</Filter>
+    </ClInclude>
+    <ClInclude Include="stick.h">
+      <Filter>Header Files\Items\Weapons</Filter>
+    </ClInclude>
+    <ClInclude Include="leather.h">
+      <Filter>Header Files\Items\Armors</Filter>
+    </ClInclude>
+    <ClInclude Include="stinkyleather.h">
+      <Filter>Header Files\Items\Armors</Filter>
+    </ClInclude>
+    <ClInclude Include="player.h">
+      <Filter>Header Files\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="skills.h">
+      <Filter>Header Files\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="zombie.h">
+      <Filter>Header Files\Monsters\World 2</Filter>
+    </ClInclude>
+    <ClInclude Include="ghoul.h">
+      <Filter>Header Files\Monsters\World 2</Filter>
+    </ClInclude>
+    <ClInclude Include="octomical.h">
+      <Filter>Header Files\Monsters\World 2</Filter>
+    </ClInclude>
+    <ClInclude Include="healthpotion.h">
+      <Filter>Header Files\Items\Potions</Filter>
+    </ClInclude>
+    <ClInclude Include="manapotion.h">
+      <Filter>Header Files\Items\Potions</Filter>
+    </ClInclude>
+    <ClInclude Include="mixedpotion.h">
+      <Filter>Header Files\Items\Potions</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Source.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="monsters.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Debuggers</Filter>
+    </ClCompile>
+    <ClCompile Include="items.cpp">
+      <Filter>Source Files\Debuggers</Filter>
+    </ClCompile>
+    <ClCompile Include="armors.cpp">
+      <Filter>Source Files\Debuggers</Filter>
+    </ClCompile>
+    <ClCompile Include="potions.cpp">
+      <Filter>Source Files\Debuggers</Filter>
+    </ClCompile>
+    <ClCompile Include="weapons.cpp">
+      <Filter>Source Files\Debuggers</Filter>
+    </ClCompile>
+    <ClCompile Include="club.cpp">
+      <Filter>Source Files\Items\Weapons</Filter>
+    </ClCompile>
+    <ClCompile Include="stick.cpp">
+      <Filter>Source Files\Items\Weapons</Filter>
+    </ClCompile>
+    <ClCompile Include="leather.cpp">
+      <Filter>Source Files\Items\Armors</Filter>
+    </ClCompile>
+    <ClCompile Include="stinkyleather.cpp">
+      <Filter>Source Files\Items\Armors</Filter>
     </ClCompile>
     <ClCompile Include="player.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Core</Filter>
     </ClCompile>
     <ClCompile Include="skills.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Core</Filter>
     </ClCompile>
-    <ClCompile Include="slime.cpp">
-      <Filter>Source Files\Monster cpps</Filter>
-    </ClCompile>
-    <ClCompile Include="skeleton.cpp">
-      <Filter>Source Files\Monster cpps</Filter>
+    <ClCompile Include="Source.cpp">
+      <Filter>Source Files\Core</Filter>
     </ClCompile>
     <ClCompile Include="bat.cpp">
-      <Filter>Source Files\Monster cpps</Filter>
+      <Filter>Source Files\Monsters\World 1</Filter>
+    </ClCompile>
+    <ClCompile Include="cadet.cpp">
+      <Filter>Source Files\Monsters\World 1</Filter>
+    </ClCompile>
+    <ClCompile Include="goldslime.cpp">
+      <Filter>Source Files\Monsters\World 1</Filter>
+    </ClCompile>
+    <ClCompile Include="skeleton.cpp">
+      <Filter>Source Files\Monsters\World 1</Filter>
+    </ClCompile>
+    <ClCompile Include="slime.cpp">
+      <Filter>Source Files\Monsters\World 1</Filter>
+    </ClCompile>
+    <ClCompile Include="zombie.cpp">
+      <Filter>Source Files\Monsters\World 2</Filter>
+    </ClCompile>
+    <ClCompile Include="ghoul.cpp">
+      <Filter>Source Files\Monsters\World 2</Filter>
+    </ClCompile>
+    <ClCompile Include="octomical.cpp">
+      <Filter>Source Files\Monsters\World 2</Filter>
+    </ClCompile>
+    <ClCompile Include="healthpotion.cpp">
+      <Filter>Source Files\Items\Potions</Filter>
+    </ClCompile>
+    <ClCompile Include="manapotion.cpp">
+      <Filter>Source Files\Items\Potions</Filter>
+    </ClCompile>
+    <ClCompile Include="mixedpotion.cpp">
+      <Filter>Source Files\Items\Potions</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

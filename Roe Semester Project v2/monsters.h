@@ -36,6 +36,12 @@ public:
 
 	void SetLevel(int level_) { level = level_; };
 	int GetLevel() { return level; };	
+
+	void SetMagiccost(int magiccost_) {magiccost = magiccost_; };
+	int GetMagiccost() { return magiccost; };
+
+	void SetMagicpower(int magicpower_) { magicpower = magicpower_; };
+	int GetMagicpower() { return magicpower; };
 private:
 	string name;
 	int namelength;
@@ -46,5 +52,7 @@ private:
 	int defense;
 	int damage;
 	int level;
+	int magiccost;
+	int magicpower;
 };
 #endif

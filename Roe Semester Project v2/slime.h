@@ -7,10 +7,7 @@ class slime : public monster
 public:
 	slime();
 	~slime();
-
-
 private:
-
 };
 
 #endif

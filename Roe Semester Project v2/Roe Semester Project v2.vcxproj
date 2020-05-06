@@ -123,21 +123,53 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="armors.h" />
     <ClInclude Include="bat.h" />
+    <ClInclude Include="cadet.h" />
+    <ClInclude Include="club.h" />
+    <ClInclude Include="ghoul.h" />
+    <ClInclude Include="goldslime.h" />
+    <ClInclude Include="healthpotion.h" />
+    <ClInclude Include="items.h" />
+    <ClInclude Include="leather.h" />
+    <ClInclude Include="manapotion.h" />
+    <ClInclude Include="mixedpotion.h" />
     <ClInclude Include="monsters.h" />
+    <ClInclude Include="octomical.h" />
     <ClInclude Include="player.h" />
+    <ClInclude Include="potions.h" />
     <ClInclude Include="skeleton.h" />
     <ClInclude Include="skills.h" />
     <ClInclude Include="slime.h" />
+    <ClInclude Include="stick.h" />
+    <ClInclude Include="stinkyleather.h" />
+    <ClInclude Include="weapons.h" />
+    <ClInclude Include="zombie.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="armors.cpp" />
     <ClCompile Include="bat.cpp" />
+    <ClCompile Include="cadet.cpp" />
+    <ClCompile Include="club.cpp" />
+    <ClCompile Include="ghoul.cpp" />
+    <ClCompile Include="goldslime.cpp" />
+    <ClCompile Include="healthpotion.cpp" />
+    <ClCompile Include="items.cpp" />
+    <ClCompile Include="leather.cpp" />
+    <ClCompile Include="manapotion.cpp" />
+    <ClCompile Include="mixedpotion.cpp" />
     <ClCompile Include="monsters.cpp" />
+    <ClCompile Include="octomical.cpp" />
     <ClCompile Include="player.cpp" />
+    <ClCompile Include="potions.cpp" />
     <ClCompile Include="skeleton.cpp" />
     <ClCompile Include="skills.cpp" />
     <ClCompile Include="slime.cpp" />
     <ClCompile Include="Source.cpp" />
+    <ClCompile Include="stick.cpp" />
+    <ClCompile Include="stinkyleather.cpp" />
+    <ClCompile Include="weapons.cpp" />
+    <ClCompile Include="zombie.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -11,6 +11,8 @@ monster::monster()
 	defense = 1;
 	damage = 1;
 	level = 1;
+	magiccost = 0;
+	magicpower = 0;
 }
 
 monster::~monster()
